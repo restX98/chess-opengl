@@ -12,6 +12,7 @@ public:
   ~Window();
 
   void run();
+  void run(std::function<void()> renderFunction); // TODO: temporary
 
 private:
   bool shouldClose();

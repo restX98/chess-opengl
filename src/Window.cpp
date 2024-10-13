@@ -45,3 +45,17 @@ void Window::run() {
   }
 }
 
+// TODO: temporary
+void Window::run(std::function<void()> renderFunction) {
+  glEnable(GL_DEPTH_TEST);
+
+  while (!glfwWindowShouldClose(this->m_window)) {
+    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    renderFunction();
+
+    glfwSwapBuffers(this->m_window);
+    glfwPollEvents();
+  }
+}

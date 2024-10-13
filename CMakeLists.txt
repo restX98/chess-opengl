@@ -43,6 +43,10 @@ include_directories(${PROJECT_SOURCE_DIR}/src/include)
 add_executable(Chess
   src/main.cpp
   src/Window.cpp
+  src/Shader.cpp
+  src/Mesh.cpp
+  src/Model.cpp
+  src/Plane.cpp
 )
 
 target_link_libraries(Chess PRIVATE glfw glad stb_image glm::glm )
