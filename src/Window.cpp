@@ -34,28 +34,19 @@ Window::~Window() {
   glfwTerminate();
 }
 
-void Window::run() {
-  glEnable(GL_DEPTH_TEST);
-
-  while (!glfwWindowShouldClose(this->m_window)) {
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-    glfwSwapBuffers(this->m_window);
-    glfwPollEvents();
-  }
+bool Window::shouldClose() {
+  return glfwWindowShouldClose(this->m_window);
 }
 
-// TODO: temporary
-void Window::run(std::function<void()> renderFunction) {
-  glEnable(GL_DEPTH_TEST);
+void Window::clearBuffers() {
+  glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+}
 
-  while (!glfwWindowShouldClose(this->m_window)) {
-    glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+void Window::setBackgroundColor(float red, float green, float blue) {
+  glClearColor(red, green, blue, 1.0f);
+}
 
-    renderFunction();
-
-    glfwSwapBuffers(this->m_window);
-    glfwPollEvents();
-  }
+void Window::update() {
+  glfwSwapBuffers(this->m_window);
+  glfwPollEvents();
 }
