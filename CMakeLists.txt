@@ -42,10 +42,12 @@ include_directories(${PROJECT_SOURCE_DIR}/src/include)
 
 add_executable(Chess
   src/main.cpp
+  src/Game.cpp
   src/Window.cpp
   src/Shader.cpp
   src/Mesh.cpp
   src/Model.cpp
+  src/Material.cpp
   src/Plane.cpp
 )
 

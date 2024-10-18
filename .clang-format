@@ -3,3 +3,4 @@ DerivePointerAlignment: false
 PointerAlignment: Left
 AllowShortFunctionsOnASingleLine: Empty
 Cpp11BracedListStyle: false
+SortIncludes: Never

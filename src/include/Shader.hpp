@@ -12,7 +12,7 @@
 
 class Shader {
 protected:
-  GLuint ID;
+  GLuint m_ID;
 
 public:
 
@@ -41,7 +41,5 @@ public:
                                  const glm::mat4& projection);
 
 private:
-  Shader(const std::string& vertexPath, const std::string& fragmentPath);
-
   void checkCompileErrors(unsigned int shader, std::string type);
 };
